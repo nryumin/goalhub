@@ -1,0 +1,1 @@
+docker-compose -f ../../docker-compose.base.yml exec database mongo "data/scripts/$1"

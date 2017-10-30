@@ -1,0 +1,11 @@
+version: '3'
+services:
+  webpack:
+    build:
+      context: backend
+      dockerfile: Dockerfile.webpack
+    volumes:
+       - "./backend/static:/code/static"
+       - "./backend/frontend:/code/frontend"
+    command: ["npm","run","watch"]
+    #command: ls

@@ -1,0 +1,5 @@
+Flask==0.12.2
+Flask-PyMongo
+flask-login
+python-dateutil
+requests

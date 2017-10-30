@@ -1,0 +1,13 @@
+version: '3'
+services:
+  backend:
+    command: ["python","run_dev.py"]
+    volumes:
+      - "./backend:/code"
+    environment:
+      - PYTHONUNBUFFERED=0
+  frontend:
+    command: ["npm","run","watch"]
+    volumes:
+       - "./frontend/src:/src/src"
+  database:

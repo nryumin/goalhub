@@ -1,0 +1,7 @@
+version: '3'
+services:
+  backend:
+    command: ["python","run_prod.py"]
+  frontend:
+    command: ["npm","run","build"]
+  database:

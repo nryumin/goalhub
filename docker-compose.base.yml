@@ -1,0 +1,24 @@
+#use volumes for fe dist code
+version: '3'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - "static:/code/static"
+      - "./frontend/templates:/code/templates"
+  frontend:
+    build: ./frontend
+    volumes:
+       - "static:/src/dist"
+  database:
+    build: ./database
+    ports:
+      - "27017:27017"
+    volumes:
+      - "./database/data:/data/db"
+      - "./database/scripts:/data/scripts"
+volumes:
+  static:
+  templates:
