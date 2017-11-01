@@ -3,7 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
-    entry: ['whatwg-fetch','./src/js/app.js'],
+    entry: ['whatwg-fetch', './src/js/app.js'],
     output: {
         filename: 'bundle.js',
         publicPath: "static/",
@@ -12,6 +12,11 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist'])
     ],
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' для webpack 1
+        }
+    },
     module: {
         rules: [
             {
