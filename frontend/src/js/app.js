@@ -1,14 +1,24 @@
 import Vue from 'vue'
 
 
+Vue.component('test',{
+    template : `<b>{{text}}</b>`,
+    props: ['text']
+});
+
 var app = new Vue({
     el: '#app',
     data: {
-        message: 'Hello Vue.js!'
+        todos: [1,2,3,45]
     },
-    methods: {
-        reverseMessage: function () {
-            this.message = this.message.split('').reverse().join('')
-        }
-    }
+    template: `<div>
+                <ol>
+                    <li v-for="todo in todos">
+                        <test v-bind:text="todo"></test>
+                    </li>
+                </ol>
+                
+                </div>`,
 });
+
+window.app = app;
